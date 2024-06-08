@@ -12,7 +12,7 @@ export default async function Albums() {
     });
     const albums = await response.json();
 
-
+    await new Promise(r => setTimeout(r, 4000));
     const AlbumsList = () => {
         return (
             <div className=" mx-auto py-5 lg:py-5 relative">

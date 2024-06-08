@@ -39,7 +39,7 @@ const Header = () => {
                     className="px-3 py-2 rounded-md transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none dark:hover:bg-gray-100 dark:hover:text-gray-800 dark:focus:bg-gray-800 dark:focus:text-gray-50"
                     prefetch={false}
                 >
-                    Albums
+                    Mochila
                 </Link>
                 <Link
                     href="/replay"
