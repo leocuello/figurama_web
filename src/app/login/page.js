@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { RiGroup2Line, RiSearchEyeLine, RiBookReadLine, RiArrowUpLine } from "@remixicon/react";
 import LoginButton from "@/app/login/compoments/login_button";
+import logo from '../../../public//image/logo/logo_medium.png';
 export default function Page() {
 
     return (
@@ -9,8 +10,8 @@ export default function Page() {
 
             <div className="">
                 <Image
-                    src="/image/logo_medium.png"
-                    alt="Next.js Logo"
+                    src={logo}
+                    alt="Figurama"
                     width={400}
                     height={195}
                     priority
