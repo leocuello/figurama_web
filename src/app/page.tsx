@@ -4,14 +4,14 @@ import NavMenu from "@/components/NavMenu"
 import News from "@/components/News"
 
 
-export default function Home({ children }: { children: React.ReactNode }) {
+export default function Home() {
 
   return (
 
     <>
       <NavMenu />
       <News />
-      <main className="p-6">{children}</main>
+      <main className="p-6"></main>
     </>
 
   )
