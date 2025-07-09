@@ -35,8 +35,6 @@ export default function AlbumCards() {
   if (loading) return <LoadingCenter />
   if (!collection) return <div>Error: Album not found</div>
 
-  const collectedCount = collection.album.cards.length ?? 0
-  const completionPercent = Math.round((collectedCount / (collection.album.total ?? 1)) * 100)
   const color = collection.album.border_color
 
   return (

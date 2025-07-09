@@ -35,17 +35,15 @@ export class ApiService {
   }
 
   public async get<T>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-    console.log("APIIIII");
-    console.log(config);
     return this.client.get<T>(url, config)
   }
 
-  public async post<T>(url: string, data: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-    return this.client.post<T>(url, data, config)
+  public async post<T, D = unknown>(url: string, data: D, config?: AxiosRequestConfig<D>): Promise<AxiosResponse<T>> {
+    return this.client.post<T, AxiosResponse<T>, D>(url, data, config)
   }
 
-  public async put<T>(url: string, data: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-    return this.client.put<T>(url, data, config)
+  public async put<T, D = unknown>(url: string, data: D, config?: AxiosRequestConfig<D>): Promise<AxiosResponse<T>> {
+    return this.client.put<T, AxiosResponse<T>, D>(url, data, config)
   }
 
   public async delete<T>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {

@@ -6,12 +6,10 @@ import { getCollections } from "@/actions/collection"
 import { Collection } from "@/types/Collections"
 import Image from 'next/image'
 import LoadingCenter from "@/components/LoadingCenter"
-import { useDataStore } from '@/lib/store'
 import ErrorMessage from "@/components/ErrorMessage"
 
 export default function AlbumesClient() {
   const [collections, setCollections] = useState<Collection[]>([])
-  const setData = useDataStore((s) => s.setData)
   const [loading, setLoading] = useState(true)
   const router = useRouter()
   const [error, setError] = useState<string | null>(null)

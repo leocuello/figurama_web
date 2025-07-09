@@ -1,23 +1,19 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { onAuthStateChanged, signOut, User } from 'firebase/auth'
 import { auth } from '@/lib/firebase'
 
 export default function AccountPage() {
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<User | null>(null)
   const [friendCode] = useState("120249")
   const [showToast, setShowToast] = useState(false)
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-      if (firebaseUser) {
-        setUser(firebaseUser)
-      } else {
-        window.location.href = '/login' // Redirigir si no está logueado
-      }
+      if (firebaseUser) setUser(firebaseUser)
+      else window.location.href = '/login'
     })
-
     return () => unsubscribe()
   }, [])
 
@@ -27,31 +23,7 @@ export default function AccountPage() {
     setTimeout(() => setShowToast(false), 3000)
   }
 
-  const getInitials = (name: string) => {
-    return name
-      .split(" ")
-      .map((n) => n[0])
-      .join("")
-  }
-
-  const userData = {
-    name: user?.displayName ?? "Usuario",
-    email: user?.email ?? "sin-email",
-    avatar: user?.photoURL ?? "/placeholder.svg",
-    level: 15,
-    experience: 2450,
-    nextLevelExp: 3000,
-    albums: 1250,
-    repeated: 89,
-    totalGames: 156,
-    friends: 23,
-    students: 12,
-  }
-
-  // Resto del componente igual al tuyo, con estas diferencias:
-  // - Usá `userData.name`, `userData.email`, `userData.avatar`
-  // - Quitá todo lo relacionado a `session`
-  // - Para logout: `signOut(auth)`
+  if (!user) return null
 
   return (
     <div className="min-h-screen">
@@ -63,7 +35,6 @@ export default function AccountPage() {
 
       <div className="min-h-screen p-4 md:p-6 lg:p-8">
         <div className="max-w-7xl mx-auto space-y-6">
-
           <div className="flex justify-between items-start">
             <div className="space-y-2">
               <h1 className="text-2xl font-bold text-gray-900">Cuenta</h1>
@@ -77,10 +48,21 @@ export default function AccountPage() {
             </button>
           </div>
 
-          {/* Resto del contenido (tu código original) */}
-          {/* Donde antes usabas `session?.user` ahora usás `userData` */}
-          {/* ... */}
-
+          <div className="mt-6 space-y-2">
+            <img
+              src={user.photoURL ?? "/placeholder.svg"}
+              alt="Avatar"
+              className="w-20 h-20 rounded-full border-2 border-gray-300"
+            />
+            <h2 className="text-xl font-semibold">{user.displayName ?? "Usuario"}</h2>
+            <p className="text-gray-500">{user.email ?? "sin-email"}</p>
+            <button
+              onClick={copyFriendCode}
+              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+            >
+              Copiar código de amigo
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -104,7 +104,6 @@ const formatCurrency = (amount: number) => {
 export default function CreditPage() {
   const [expandedRows, setExpandedRows] = useState<string[]>([])
 
-  const totalAmount = transactions.filter((t) => t.status === "completed").reduce((sum, t) => sum + t.amount, 0)
   const totalCredits = transactions.filter((t) => t.status === "completed").reduce((sum, t) => sum + t.credits, 0)
 
   const toggleRowExpansion = (transactionId: string) => {

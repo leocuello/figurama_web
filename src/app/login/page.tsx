@@ -27,9 +27,9 @@ export default function LoginPage() {
         document.cookie = `token=${token}; path=/`
         router.push('/')
       }
-    } catch (err: any) {
-      console.error('Error en login:', err)
-      setError(err.message || 'Error desconocido')
+    } catch (error) {
+      console.error('Error en login:', error)
+      setError('Error desconocido')
     } finally {
       setLoading(false)
     }

@@ -1,4 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface LoginResponse {
     token: string;
-    // si hay otros campos, los agregas acá
   }
