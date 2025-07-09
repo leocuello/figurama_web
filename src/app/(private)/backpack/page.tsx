@@ -55,7 +55,7 @@ export default function AlbumesClient() {
     <div style={{ minHeight: "100vh", backgroundColor: "white", color: "black", padding: "20px" }}>
 
       {/* Filtros */}
-      
+
 
       {/* Grid de álbumes */}
       <div
@@ -145,34 +145,34 @@ export default function AlbumesClient() {
                     zIndex: 10,
                   }}
                 >
-    {progreso}%
-  </div>
+                  {progreso}%
+                </div>
 
-  {/* Título sobre la imagen abajo */}
-  <div
-    style={{
-      position: "absolute",
-      bottom: "0",
-      width: "100%",
-      backgroundColor: `${color}33`, // más transparente
-      color: "white",
-      padding: "10px",
-      fontWeight: "bold",
-      fontSize: "14px",
-      textAlign: "center",
-      textShadow: "1px 1px 2px rgba(0,0,0,0.7)",
-      zIndex: 10,
-    }}
-  >
-    {collection.album.title}
-  </div>
-</div>
+                {/* Título sobre la imagen abajo */}
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "0",
+                    width: "100%",
+                    backgroundColor: `${color}33`, // más transparente
+                    color: "white",
+                    padding: "10px",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                    textAlign: "center",
+                    textShadow: "1px 1px 2px rgba(0,0,0,0.7)",
+                    zIndex: 10,
+                  }}
+                >
+                  {collection.album.title}
+                </div>
+              </div>
               {/* Información del álbum */}
-              <div style={{ padding: "12px",    backgroundColor: `${color}`  }}>
+              <div style={{ padding: "12px", backgroundColor: `${color}` }}>
 
                 {/* Contador de figuritas */}
-                <p style={{ fontSize: "16px",color: "#AAAAAA", }}>
-                  {total} 
+                <p style={{ fontSize: "16px", color: "#AAAAAA", }}>
+                  {total}
                 </p>
               </div>
 
