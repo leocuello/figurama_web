@@ -73,7 +73,7 @@ export default function AlbumHistory({ collection }: AlbumHistoryProps) {
     if (!isHistoryModalOpen && isPlaying) {
       stopPlayback()
     }
-  }, [isHistoryModalOpen])
+  }, [isHistoryModalOpen, isPlaying])
 
   return (
     <>

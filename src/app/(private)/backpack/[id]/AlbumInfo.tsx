@@ -11,7 +11,6 @@ interface AlbumInfoProps {
 
 export default function AlbumButtons({ collection }: AlbumInfoProps) {
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [isHistoryModalOpen, setIsHistoryModalOpen] = useState(false)
 
     return (
         <>

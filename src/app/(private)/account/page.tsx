@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { onAuthStateChanged, signOut, User } from 'firebase/auth'
 import { auth } from '@/lib/firebase'
+import Image from 'next/image'
 
 export default function AccountPage() {
   const [user, setUser] = useState<User | null>(null)
@@ -49,11 +50,14 @@ export default function AccountPage() {
           </div>
 
           <div className="mt-6 space-y-2">
-            <img
-              src={user.photoURL ?? "/placeholder.svg"}
-              alt="Avatar"
-              className="w-20 h-20 rounded-full border-2 border-gray-300"
-            />
+            <div className="w-20 h-20 relative">
+              <Image
+                src={user.photoURL ?? "/placeholder.svg"}
+                alt="Avatar"
+                fill
+                className="rounded-full border-2 border-gray-300 object-cover"
+              />
+            </div>
             <h2 className="text-xl font-semibold">{user.displayName ?? "Usuario"}</h2>
             <p className="text-gray-500">{user.email ?? "sin-email"}</p>
             <button
