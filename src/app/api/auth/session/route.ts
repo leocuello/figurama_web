@@ -6,7 +6,7 @@ import { login } from '@/actions/auth'
 export async function POST(request: NextRequest) {
   const { token } = await request.json()
 
-  const data = await login(token)
+  const data: LoginResponse = await login(token)
   const t = data.token
 
   const response = NextResponse.json({ success: true })
