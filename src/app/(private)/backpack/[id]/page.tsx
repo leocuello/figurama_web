@@ -38,6 +38,7 @@ export default function AlbumCards() {
   const color = collection.album.border_color
 
   return (
+
     <div style={{ minHeight: "100vh", padding: 20, backgroundColor: "white", color: "black" }}>
       <AlbumInfo collection={collection} />
       <div
@@ -74,6 +75,6 @@ export default function AlbumCards() {
           onClose={() => setCardSelected(null)}
         />
       )}
-    </div>
+    </div> 
   )
 }

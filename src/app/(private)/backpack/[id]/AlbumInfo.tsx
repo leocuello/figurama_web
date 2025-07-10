@@ -14,7 +14,7 @@ export default function AlbumButtons({ collection }: AlbumInfoProps) {
 
     return (
         <>
-            <div className="max-w-7xl mx-auto mb-3 px-4 sm:flex sm:items-center sm:justify-between sm:space-x-4">
+            <div className="max-w-7xl mx-auto mb-3 sm:flex sm:items-center sm:justify-between sm:space-x-4">
                 {/* Título */}
                 <h2 className="text-xl font-semibold text-gray-800 truncate sm:flex-1">
                     {collection.album.title}
