@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from "react"
 import {
-  Gamepad2,
   Backpack,
   Repeat,
   Compass
@@ -14,19 +13,19 @@ export default function News() {
   const [selectedCard, setSelectedCard] = useState<number | null>(null)
   const options = [
     {
-      id: 2,
+      id: 1,
       icon: Backpack,
       title: "Mochila",
       description: "Guardá y organizá todas tus figuritas en un solo lugar.",
     },
     {
-      id: 3,
+      id: 2,
       icon: Repeat,
       title: "Intercambio",
       description: "Intercambiá figuritas con otros usuarios y completá tu colección.",
     },
     {
-      id: 4,
+      id: 3,
       icon: Compass,
       title: "Explorador",
       description: "Evoluciona tu explorador xon accesorios para mejorar la busqueda",
