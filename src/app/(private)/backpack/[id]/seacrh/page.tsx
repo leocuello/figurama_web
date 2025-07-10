@@ -62,7 +62,7 @@ export default function SearchPage() {
     }
   }
 
-  if (loadError) return <div>Error al cargar el mapa</div>
+  if (loadError) return <div>Error: Al cargar el mapa</div>
   if (!collection) return <div></div>
 
   return (
