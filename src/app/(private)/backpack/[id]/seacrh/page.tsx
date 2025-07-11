@@ -59,7 +59,8 @@ export default function SearchPage() {
     setClickLoading(true)
 
     try {
-      await searchCard(collection.album.ID, lat, lng)
+      const reward = await searchCard(collection.album.ID, lat, lng)
+      console.log(reward)
       setClicks(prev => [...prev, { lat, lng, time }])
     } catch (err) {
       console.error('Error al buscar la carta:', err)
@@ -89,7 +90,7 @@ export default function SearchPage() {
         <div className="min-h-screen">
           <div className="max-w-7xl mx-auto space-y-6">
             <div className="flex flex-col md:flex-row gap-6">
-              
+
               {/* Contenedor del Mapa con overlay */}
               <div className="flex-1 relative">
                 <GoogleMap
@@ -138,10 +139,10 @@ export default function SearchPage() {
 
                 {/* Overlay de loading solo sobre el mapa */}
                 {clickLoading && (
-                  <div className="absolute inset-0 bg-black bg-opacity-80 z-10 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gray-200 bg-opacity-90 z-10 flex items-center justify-center">
                     <div className="flex flex-col items-center gap-4 text-white">
                       <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-white border-opacity-30 border-t-blue-500"></div>
-                      <p className="text-lg font-semibold">Buscando carta...</p>
+                      <p className="text-lg font-semibold">Buscando ...</p>
                     </div>
                   </div>
                 )}
@@ -155,7 +156,7 @@ export default function SearchPage() {
                 <h2 className="font-semibold mb-2">Recorrido</h2>
 
                 {combined.length === 0 ? (
-                  <p className="text-gray-500">No hay viajes ni clics aún</p>
+                  <p className="text-gray-500">No hay recorrido aún</p>
                 ) : (
                   <ul className="space-y-2">
                     {[...combined].reverse().map((item, idx) => {
@@ -178,7 +179,7 @@ export default function SearchPage() {
                   </div>
                 )}
               </div>
-              
+
             </div>
           </div>
         </div>

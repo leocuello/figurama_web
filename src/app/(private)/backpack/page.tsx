@@ -40,7 +40,8 @@ export default function AlbumesClient() {
   }
 
   if (error) {
-    return <ErrorMessage message={error} />
+    const message = error + ":  error al obtner la lista de albumes"  
+    return <ErrorMessage message={message} />
   }
 
   if (loading) {

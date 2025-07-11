@@ -15,3 +15,10 @@ export async function collectionById(id: string) {
   console.log(response)
   return response.data;
 }
+
+export async function collectionDeleteById(id: string) {
+  const api = await ApiService.instance();
+  const response = await api.delete<Collection>(`collection/${id}`);
+  console.log(response)
+  return response.data;
+}
