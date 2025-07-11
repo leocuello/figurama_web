@@ -1,10 +1,13 @@
 import { Album } from "@/types//Album";
+import { Travel } from "@/types//Travel";
 
 export interface Collection {
-  created_at: string;
-  full: boolean;
   ID: string;
-  total_credits: number;
   user: string;
   album: Album;
+  created_at: string;
+  total_search: number;
+  total_credits: number;
+  full: boolean;
+  travels: Travel[];
 }

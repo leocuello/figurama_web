@@ -1,4 +1,4 @@
 export interface Location {
-    coordinates: number[];
     type: string;
+    coordinates: number[];
   }

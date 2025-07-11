@@ -38,13 +38,7 @@ export default function News() {
       {/* Hero / Banner */}
       <section className="text-center py-8">
 
-        <Image
-          src="/logo_default.png"
-          alt="Logo"
-          width={200}
-          height={200}
-          className="mx-auto mb-5"
-        />
+  
 
         <h1 className="text-3xl md:text-6xl mb-10">¡Bienvenidos a Figurama!</h1>
 

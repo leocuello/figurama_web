@@ -1,17 +1,16 @@
 import { Location } from "@/types/Location";
 
 export interface Card {
-    album: string;
-    created_at: string;
-    description: string;
-    found_at: string;
-    hard: boolean;
-    id: string;
-    image_url: string;
-    location: Location;
-    number: number;
-    radio: number;
-    replay: boolean;
-    title: string;
-  }
-  
+  ID: string;
+  number: number;
+  location: Location;
+  hard: boolean;
+  radio: number;
+  title: string;
+  description: string;
+  image_url: string;
+  created_at: string;
+  album: string;
+  replay: boolean;
+  found_at: string;
+}
