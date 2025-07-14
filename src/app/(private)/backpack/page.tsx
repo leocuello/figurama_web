@@ -7,6 +7,7 @@ import { Collection } from "@/types/Collections"
 import Image from 'next/image'
 import LoadingCenter from "@/components/LoadingCenter"
 import ErrorMessage from "@/components/ErrorMessage"
+import CollectionInfo from "./CollectioInfo"
 
 export default function AlbumesClient() {
   const [collections, setCollections] = useState<Collection[]>([])
@@ -40,7 +41,7 @@ export default function AlbumesClient() {
   }
 
   if (error) {
-    const message = error + ":  error al obtner la lista de albumes"  
+    const message = error + ":  error al obtener la lista de albumes"  
     return <ErrorMessage message={message} />
   }
 
@@ -54,7 +55,7 @@ export default function AlbumesClient() {
     <div style={{ minHeight: "100vh", backgroundColor: "white", color: "black", padding: "20px" }}>
 
       {/* Filtros */}
-
+      <CollectionInfo />
 
       {/* Grid de álbumes */}
       <div

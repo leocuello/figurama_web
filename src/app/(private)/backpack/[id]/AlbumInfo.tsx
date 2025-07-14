@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { Collection } from '@/types/Collections'
 import { Search, Info, Trash2 } from 'lucide-react'
 import AlbumHistory from './AlbumHistory'
@@ -28,10 +27,10 @@ export default function AlbumInfo({ collection }: AlbumInfoProps) {
           <Link
             href={`/backpack/${collection.ID}/seacrh`}
             className="flex items-center justify-between gap-2 px-4 py-2 rounded-md
-              bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-blue-600
+              bg-green-200 text-gray-700 hover:bg-gray-200 hover:text-blue-600
               transition-colors"
           >
-            <span>Buscar</span>
+            <span>Buscar figurita</span>
             <Search className="w-5 h-5" />
           </Link>
 

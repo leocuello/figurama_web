@@ -10,6 +10,7 @@ import CardNotFound from './CardNotFound'
 import CardModal from './CardModal'
 import { Card } from '@/types/Card'
 import AlbumInfo from './AlbumInfo'
+import ErrorMessage from '@/components/ErrorMessage'
 
 export default function AlbumCards() {
   const params = useParams()
@@ -33,7 +34,10 @@ export default function AlbumCards() {
   }, [id])
 
   if (loading) return <LoadingCenter />
-  if (!collection) return <div>Error: Album not found</div>
+  if (!collection) {
+      const message = "Error al obtener el album"  
+      return <ErrorMessage message={message} />
+    }
 
   const color = collection.album.border_color
 

@@ -8,7 +8,7 @@ export default function PrivateLayout({ children }: { children: React.ReactNode 
   return (
     <>
       <NavMenu />
-      <main className="p-6">{children}</main>
+      <main>{children}</main>
     </>
   )
 }

@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <NavMenu />
       <News />
-      <main className="p-6"></main>
+      <main></main>
     </>
 
   )

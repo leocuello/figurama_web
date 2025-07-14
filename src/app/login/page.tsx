@@ -29,7 +29,7 @@ export default function LoginPage() {
       }
     } catch (error) {
       console.error('Error en login:', error)
-      setError('Error desconocido')
+      setError('Error, vuelva a internar mas tarde.')
     } finally {
       setLoading(false)
     }
