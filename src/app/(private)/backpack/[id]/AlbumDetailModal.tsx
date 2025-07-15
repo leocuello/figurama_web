@@ -19,8 +19,8 @@ export default function AlbumDetailModal({ id, onClose }: Props) {
     useEffect(() => {
         const fetchCollection = async () => {
             try {
-                const response = await collectionById(id)
-                setCollection(response)
+                const collection: Collection = await collectionById(id)
+                setCollection(collection)
             } catch (error) {
                 console.error('Error loading album:', error)
             } finally {
@@ -55,7 +55,7 @@ export default function AlbumDetailModal({ id, onClose }: Props) {
                     <X className="w-6 h-6" />
                 </button>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-1">
                     <div className="border border-gray-300 rounded-lg p-4 min-h-[80px] flex flex-col justify-center items-center">
                         <h4 className="text-sm text-gray-500 mb-1">Álbum lleno</h4>
                         <p className="text-2xl font-bold text-center">{collection.full ? 'Sí' : 'No'}</p>

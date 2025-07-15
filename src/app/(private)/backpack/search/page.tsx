@@ -162,8 +162,13 @@ export default function SearchPage() {
                                             mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
                                         >
                                             <div className="absolute bottom-[40px] left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md bg-white">
-
-                                                <img src={firebaseUser.photoURL} alt="avatar" className="w-full h-full object-cover" />
+                                                <Image
+                                                    src={firebaseUser.photoURL}
+                                                    alt="avatar"
+                                                    width={50}
+                                                    height={50}
+                                                    className="w-full h-full object-cover"
+                                                    />
                                             </div>
                                         </OverlayView>
                                     )}
