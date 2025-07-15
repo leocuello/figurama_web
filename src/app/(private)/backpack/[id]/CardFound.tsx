@@ -73,7 +73,6 @@ export default function CardFound({ card, color, onClick }: Props) {
             backgroundColor: `${color}33`,
             color: "white",
             padding: 10,
-            fontWeight: "bold",
             fontSize: 14,
             textAlign: "center",
             textShadow: "1px 1px 2px rgba(0,0,0,0.7)",

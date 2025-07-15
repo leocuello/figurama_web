@@ -1,4 +1,5 @@
 import { Location } from "@/types/Location";
+import { Album } from "./Album";
 
 export interface Card {
   ID: string;
@@ -10,7 +11,7 @@ export interface Card {
   description: string;
   image_url: string;
   created_at: string;
-  album: string;
+  album: Album;
   replay: boolean;
   found_at: string;
 }

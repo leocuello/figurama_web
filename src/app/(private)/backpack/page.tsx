@@ -140,7 +140,7 @@ export default function AlbumesClient() {
                     bottom: "0",
                     width: "100%",
                     backgroundColor: `${border_color}33`, // más transparente
-                    color: "white",
+                    color: `${text_color}`,
                     padding: "10px",
                     fontSize: "14px",
                     textAlign: "center",
