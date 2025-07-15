@@ -21,7 +21,7 @@ export default function AlbumDeleteModal({ id, onClose }: AlbumDeleteModalProps)
     try {
       await collectionDeleteById(id)
       router.push('/backpack')
-    } catch (err) {
+    } catch {
       setError('Error al eliminar el álbum.')
     } finally {
       setLoading(false)
