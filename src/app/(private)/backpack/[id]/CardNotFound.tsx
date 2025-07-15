@@ -19,13 +19,12 @@ interface Props {
           justifyContent: "center",
           userSelect: "none",
           color: `${color}99`,
-          fontSize: 48,
-          fontWeight: "bold",
+          fontSize: 36,
           cursor: "default",
         }}
         title={`Card #${number} not found`}
       >
-        ?
+        {number}
       </div>
     )
   }

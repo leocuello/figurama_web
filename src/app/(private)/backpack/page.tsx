@@ -72,7 +72,8 @@ export default function AlbumesClient() {
           const total = collection.album.total
           const found = collection.album.cards.length
           const progreso = getProgreso(found, total)
-          const color = collection.album.border_color
+          const border_color = collection.album.border_color
+          const text_color = collection.album.border_text_color
           return (
             <div
               key={collection.ID}
@@ -83,7 +84,7 @@ export default function AlbumesClient() {
                 padding: "0",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
-                border: `10px solid ${color}`,
+                border: `10px solid ${border_color}`,
                 position: "relative",
                 overflow: "hidden",
               }}
@@ -96,22 +97,7 @@ export default function AlbumesClient() {
                 e.currentTarget.style.boxShadow = "none"
               }}
             >
-              {/* Progreso en esquina */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "8px",
-                  right: "8px",
-                  backgroundColor: color,
-                  color: "white",
-                  padding: "4px 8px",
-                  borderRadius: "10px",
-                  fontSize: "12px",
-                  fontWeight: "bold",
-                }}
-              >
-                {progreso}%
-              </div>
+             
 
               {/* Imagen del álbum */}
               <div
@@ -120,7 +106,7 @@ export default function AlbumesClient() {
                   height: "250px",
                   position: "relative",
                   overflow: "hidden",
-                  background: `linear-gradient(135deg, ${color}20, ${color}10)`,
+                  background: `linear-gradient(135deg, ${border_color}20, ${border_color}10)`,
                 }}
               >
                 <Image
@@ -136,12 +122,11 @@ export default function AlbumesClient() {
                     position: "absolute",
                     top: "8px",
                     right: "8px",
-                    backgroundColor: color,
-                    color: "white",
+                    backgroundColor: border_color,
+                    color: text_color,
                     padding: "4px 8px",
-                    borderRadius: "10px",
-                    fontSize: "12px",
-                    fontWeight: "bold",
+                    borderRadius: "6px",
+                    fontSize: "14px",
                     zIndex: 10,
                   }}
                 >
@@ -154,10 +139,9 @@ export default function AlbumesClient() {
                     position: "absolute",
                     bottom: "0",
                     width: "100%",
-                    backgroundColor: `${color}33`, // más transparente
+                    backgroundColor: `${border_color}33`, // más transparente
                     color: "white",
                     padding: "10px",
-                    fontWeight: "bold",
                     fontSize: "14px",
                     textAlign: "center",
                     textShadow: "1px 1px 2px rgba(0,0,0,0.7)",
@@ -168,11 +152,11 @@ export default function AlbumesClient() {
                 </div>
               </div>
               {/* Información del álbum */}
-              <div style={{ padding: "12px", backgroundColor: `${color}` }}>
+              <div style={{ padding: "12px", backgroundColor: `${border_color}` }}>
 
                 {/* Contador de figuritas */}
-                <p style={{ fontSize: "16px", color: "#AAAAAA", }}>
-                  {total}
+                <p style={{ fontSize: "16px", color: `${text_color}`, }}>
+                  {found} / {total}
                 </p>
               </div>
 
