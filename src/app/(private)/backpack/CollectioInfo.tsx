@@ -30,8 +30,7 @@ export default function CollectionInfo() {
 
   const applyFilters = () => {
     setIsModalOpen(false)
-    console.log('Categorías:', selectedCategories)
-    console.log('Estado:', selectedStatus)
+
     // Aquí podrías hacer fetch o filtrar tu listado
   }
 
