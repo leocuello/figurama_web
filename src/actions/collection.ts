@@ -14,7 +14,7 @@ export async function collectionById(id: string) {
   return response.data;
 }
 
-export async function collectionDeleteById(id: string) {
+export async function collectionDeleteById(id: string): Promise<Collection> {
   const api = await ApiService.instance();
   const response = await api.delete<Collection>(`collection/${id}`);
   return response.data;

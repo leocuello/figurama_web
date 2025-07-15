@@ -39,10 +39,10 @@ export default function SearchPage() {
     const [mapLoading, setMapLoading] = useState(false)
     const [userPosition, setUserPosition] = useState<{ lat: number; lng: number } | null>(null)
     const [selectedPosition, setSelectedPosition] = useState<{ lat: number; lng: number } | null>(null)
-    const [albums, setAlbums] = useState<any[]>([])
+    const [albums, setAlbums] = useState<Album[]>([])
     const [error, setError] = useState<string | null>(null)
     const [firebaseUser, setFirebaseUser] = useState<FirebaseUser | null>(null)
-    const [selectedAlbum, setSelectedAlbum] = useState<any | null>(null)
+    const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null)
     const [albumDistance, setAlbumDistance] = useState<number | null>(null)
     const [searchError, setSearchError] = useState<string | null>(null)
     const [album, setAlbum] = useState<Album | null>(null)
@@ -99,7 +99,7 @@ export default function SearchPage() {
         if (lat && lng) setSelectedPosition({ lat, lng })
     }
 
-    const handleAlbumClick = (alb: any, lat: number, lng: number) => {
+    const handleAlbumClick = (alb: Album, lat: number, lng: number) => {
         setSelectedAlbum(alb)
         if (selectedPosition) {
             const distance = haversineDistance(selectedPosition, { lat, lng })
