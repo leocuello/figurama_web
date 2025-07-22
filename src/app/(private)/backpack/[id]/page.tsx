@@ -62,8 +62,8 @@ export default function AlbumCards() {
           return card ? (
             <CardFound
               key={number}
+              album={collection.album}
               card={card}
-              color={color}
               onClick={() => setCardSelected(card)}
             />
           ) : (

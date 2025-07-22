@@ -1,13 +1,17 @@
 import Image from 'next/image'
 import { Card } from '@/types/Card'
+import { Album } from '@/types/Album'
 
 interface Props {
+  album: Album,
   card: Card
-  color: string
   onClick: () => void
 }
 
-export default function CardFound({ card, color, onClick }: Props) {
+export default function CardFound({ album, card, onClick }: Props) {
+
+  const color = album.border_color;
+  const text_color = album.border_text_color;
   return (
     <div
       onClick={onClick}
@@ -71,7 +75,7 @@ export default function CardFound({ card, color, onClick }: Props) {
             bottom: 0,
             width: "100%",
             backgroundColor: `${color}33`,
-            color: "white",
+            color: text_color,
             padding: 10,
             fontSize: 14,
             textAlign: "center",
