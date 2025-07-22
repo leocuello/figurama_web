@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next-auth/firebase-adapter": "^2.0.1",
     "@react-google-maps/api": "^2.20.7",
     "axios": "^1.10.0",
     "firebase": "^11.10.0",
