@@ -14,7 +14,7 @@ type Gender = 'M' | 'F'
 
 export default function CharacterCustomizer() {
     const [gender, setGender] = useState<Gender>('M')
-    const [inventory, setInventory] = useState<Inventory>(null)
+    const [inventory, setInventory] =  useState<Inventory | null>(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
 
@@ -38,10 +38,10 @@ export default function CharacterCustomizer() {
     if (loading) return <LoadingCenter />
 
     // Preparar niveles iniciales para AccessoryLevels
-    const initialAccessoryLevels = inventory?.accessories.reduce((acc, a) => {
+    const initialAccessoryLevels = (inventory?.accessories ?? []).reduce((acc, a) => {
         acc[a.name.toLowerCase()] = a.level
         return acc
-    }, {} as Record<string, number>) || {}
+    }, {} as Record<string, number>)
 
     return (
         <div className="p-6 max-w-screen-xl mx-auto">
