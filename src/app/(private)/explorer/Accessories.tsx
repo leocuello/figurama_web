@@ -14,10 +14,11 @@ interface AccessoryLevelsProps {
 const allAccessories = [
     { key: 'compass', label: 'Brújula' },
     { key: 'backpack', label: 'Mochila' },
-    { key: 'flashlight', label: 'Linterna' },
-    { key: 'friend', label: 'Friend' },
     { key: 'storage', label: 'Baúl' },
     { key: 'pickaxe', label: 'Pico' },
+    { key: 'lucky', label: 'Suerte' },
+    { key: 'friend', label: 'Friend' },
+
 ]
 
 export default function Accessories({ initialLevels, onLevelChange }: AccessoryLevelsProps) {

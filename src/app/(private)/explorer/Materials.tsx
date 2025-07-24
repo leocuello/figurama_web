@@ -80,16 +80,28 @@ export default function Materials({ inventory }: MaterialListProps) {
     }))
 
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 dark:bg-gray-800 m-3">
-            {materials.map(({ name, amount, icon }) => (
-                <div key={name} className="flex items-center gap-3 p-2 bg-gray-200 rounded">
-                    <div className="text-blue-600 dark:text-blue-400">{icon}</div>
-                    <div className="flex flex-col text-sm">
-                        <span className="font-semibold text-gray-800 dark:text-white">{name}</span>
-                        <span className="text-gray-600 dark:text-gray-300">{amount} unidades</span>
+        <div>
+            <div className="m-3">
+                <h2 className="text-xl font-semibold text-gray-800 text-center mb-4">Materiales</h2>
+
+                    <div className="grid grid-cols-4 gap-3">
+                        {materials.map(({ name, amount, icon }) => (
+                            <div
+                                key={name}
+                                className="group bg-white/80 backdrop-blur-sm rounded p-3 border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-200 cursor-pointer"
+                                title={name}
+                            >
+                                <div className="flex items-center justify-between">
+                                    <div className={`red group-hover:scale-110 transition-transform`}>
+                                         {name}
+                                    </div>
+                                    <div className={`text-lg font-bold red`}>{amount}</div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                </div>
-            ))}
+
+            </div>
         </div>
     )
 }
