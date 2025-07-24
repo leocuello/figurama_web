@@ -85,7 +85,7 @@ export default function Materials({ inventory }: MaterialListProps) {
                 <h2 className="text-xl font-semibold text-gray-800 text-center mb-4">Materiales</h2>
 
                     <div className="grid grid-cols-4 gap-3">
-                        {materials.map(({ name, amount, icon }) => (
+                        {materials.map(({ name, amount }) => (
                             <div
                                 key={name}
                                 className="group bg-white/80 backdrop-blur-sm rounded p-3 border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-200 cursor-pointer"
